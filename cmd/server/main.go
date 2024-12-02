@@ -59,19 +59,19 @@ func updateHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Разбиваем путь URL
-	urlPath := r.URL.Path
-	splitedUrlPath := strings.Split(urlPath, "/")
+	URLPath := r.URL.Path
+	splitedURLPath := strings.Split(URLPath, "/")
 
 	// Если путь URL не соответствует ожидаемому формату
-	if len(splitedUrlPath) != 5 {
+	if len(splitedURLPath) != 5 {
 		http.Error(w, "Invalid URL format", http.StatusNotFound)
 		return
 	}
 
 	// Извлекаем параметры из пути
-	typeMetric := splitedUrlPath[2]
-	nameMetric := splitedUrlPath[3]
-	valueMetric := splitedUrlPath[4]
+	typeMetric := splitedURLPath[2]
+	nameMetric := splitedURLPath[3]
+	valueMetric := splitedURLPath[4]
 
 	// Обрабатываем тип метрики
 	switch typeMetric {
